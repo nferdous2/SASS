@@ -1,0 +1,1 @@
+<!-- 1. To decleare a veriable in sass we use $ , We use variable so that yoou can use that specific style anywhere -->

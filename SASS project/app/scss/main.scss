@@ -1,0 +1,172 @@
+@forward "./base/index";
+
+@use "./util/index.scss" as variable;
+
+header {
+  background-color: variable.$header_bg;
+}
+main {
+  background-color: variable.$main_bg;
+}
+
+
+@mixin setFontSize ($value){
+  @if $value == "small"{
+font-size: 16px;
+  }
+  @else if $value == "medium"{
+    font-size: 24px;
+    font-weight: 900;
+  }
+  @else if $value == "large"{
+    font-size: 36px;
+  }
+  @else{
+    font-size: none;
+  }
+}
+#divs {
+@include setFontSize(medium)
+}
+//text color
+$colors: (
+  color1: red,
+  color2: green,
+  color3: blue,
+);
+
+@each $key, $color in $colors {
+  .#{$color}-text {
+    color: $color;
+  }
+}
+// nav styling
+nav {
+  margin-top: 15px;
+  ul {
+    list-style-type: none;
+    li {
+      display: inline-block;
+      margin: 0 15px;
+
+      a {
+        display: inline-block;
+        color: rgb(45, 41, 41);
+        text-decoration: none;
+        padding: 10px;
+        transition: 0.4s;
+        border-radius: 5px;
+        // font-size: 24px;
+        @include setFontSize(large)
+      }
+      a:hover {
+        background: #000;
+        color: white;
+      }
+    }
+  }
+}
+
+@mixin para-style ($size,$style) {
+  font-size:$size;
+  text-align: $style;
+  background-color: aqua;
+  margin: 10px 0px;
+
+}
+#edu p {
+  @include para-style(32px,left);
+}
+#edu h3{
+  @include para-style(48px,center )
+}
+
+.btn{
+border: none;
+padding: 15px 30px;
+text-align: center;
+font-size: 16px;
+cursor: pointer;
+}
+.btn-download{
+  @extend .btn;
+  background-color: rgb(29, 62, 209);
+  color: white;
+}
+.btn-learn{
+  @extend .btn
+}
+
+[class*="col-"] {
+  float: left;
+}
+//for loop
+@for $i from 1 through 12{
+  .col-#{$i}{
+    width: 100%/12*$i;
+  }
+}
+//while loop
+
+// $i: 1;
+
+// @while $i < 13 {
+//   .col-#{$i} {
+//     width: 100% / 12 * $i;
+//   }
+//   $i: $i + 1;
+// }
+
+// .col-1 {
+//   width: 8.33333%;
+// }
+
+// .col-2 {
+//   width: 16.66667%;
+// }
+
+// .col-3 {
+//   width: 25%;
+// }
+
+// .col-4 {
+//   width: 33.33333%;
+// }
+
+// .col-5 {
+//   width: 41.66667%;
+// }
+
+// .col-6 {
+//   width: 50%;
+// }
+
+// .col-7 {
+//   width: 58.33333%;
+// }
+
+// .col-8 {
+//   width: 66.66667%;
+// }
+
+// .col-9 {
+//   width: 75%;
+// }
+
+// .col-10 {
+//   width: 83.33333%;
+// }
+
+// .col-11 {
+//   width: 91.66667%;
+// }
+
+// .col-12 {
+//   width: 100%;
+// }
+
+.row::after {
+  clear: both;
+  content: "";
+  display: table;
+}

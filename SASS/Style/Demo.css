@@ -1,0 +1,17 @@
+* {
+  margin: 5%;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header, footer {
+  background: #ffa500;
+}
+
+main {
+  background: #f5ccff;
+}
+
+#about p {
+  font-size: 32px;
+}/*# sourceMappingURL=Demo.css.map */

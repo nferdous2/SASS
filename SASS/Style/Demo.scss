@@ -1,0 +1,48 @@
+// browser sass style
+$header-bgcolor: #ffa500;
+$main-bgcolor: #f5ccff;
+$header-color: #ffa500;
+$p-fontSize:32px;
+
+
+//styles adding
+*{
+    margin: 5%;
+    padding: 0;
+    box-sizing: border-box;
+}
+header , footer{
+    background: $header-color;
+}
+main{
+    background: $main-bgcolor;
+}
+#about p{
+    font-size: $p-fontSize;
+}
+// nav styling
+nav {
+    margin-top: 15px;
+    ul {
+      list-style-type: none;
+      li {
+        display: inline-block;
+        margin: 0 15px;
+  
+        a {
+          display: inline-block;
+          color: white;
+          text-decoration: none;
+          padding: 10px;
+          transition: 0.4s;
+          border-radius: 5px;
+          @include setFontSize(large);
+        }
+        a:hover {
+          background: #000;
+        }
+      }
+    }
+  }
+  
+  
